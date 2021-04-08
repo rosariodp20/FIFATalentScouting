@@ -13,3 +13,5 @@ pip install -r requirements.txt
 
 L'applicazione permette agli utenti di calcolare il potenziale dei giovani calciatori su FIFA utilizzando dei modelli di IA.
 Nello specifico è presente un modello calcolato con algoritmo di Linear Regression, un modello calcolato con algoritmo di Multilayer Perceptor ed un modello di classificazione calcolato con algoritmo di Random Forest.
+
+È consigliato l'utilizzo di questo programma con calciatori di età inferiore ai 25 anni e con overall inferiore a 75.
