@@ -8,6 +8,12 @@ Per fare funzionare in modo corretto l'applicazione occorre installare le librer
 pip install -r requirements.txt
 ```
 
+Assicurarsi inoltre di avere installato anche Tkinter, si può installare nel seguente modoa:
+
+```
+sudo apt-get install python3-tk
+```
+
 
 ## Funzionamento
 
