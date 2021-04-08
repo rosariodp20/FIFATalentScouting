@@ -33,7 +33,10 @@ def mostraPotenzialeC(pot):
     finmpc.geometry('404x264')  
     finmpc.title('FIFA Talent Scouting')
     finmpc.eval('tk::PlaceWindow . center')
-    finmpc.iconbitmap('img/ico.ico')
+    try:
+        finmpc.iconbitmap('img/ico.ico')
+    except:
+        pass
     finmpc.resizable(False, False)
     if pot=="Ottima crescita >10": 
         image=Image.open("img/ottima.png")
@@ -72,7 +75,10 @@ def mostraPotenzialeRN(pot):
     finmprn.geometry('454x264')  
     finmprn.title('FIFA Talent Scouting')
     finmprn.eval('tk::PlaceWindow . center')
-    finmprn.iconbitmap('img/ico.ico')
+    try:
+        finmprn.iconbitmap('img/ico.ico')
+    except:
+        pass
     finmprn.resizable(False, False)
 
     if pot<60:
@@ -334,7 +340,10 @@ def mostraPotenzialeLR(pot):
     finmplr.geometry('454x264')  
     finmplr.title('FIFA Talent Scouting')
     finmplr.eval('tk::PlaceWindow . center')
-    finmplr.iconbitmap('img/ico.ico')
+    try:
+        finmplr.iconbitmap('img/ico.ico')
+    except:
+        pass
     finmplr.resizable(False, False)
 
     if pot<60:
@@ -668,13 +677,16 @@ def creaFinestraCalcolaPotenziale(scelta):
     wallp= ImageTk.PhotoImage(imagew)
     labelWallp= Label(fincp, image=wallp)
     labelWallp.place(x=0, y=0)
-    fincp.iconbitmap('img/ico.ico')
+    try:
+        fincp.iconbitmap('img/ico.ico')
+    except:
+        pass
     #chiamo la funzione per centrare
     fincp.eval('tk::PlaceWindow . center')
     #creo font
     #myFont = Font(family="Arial Black", size=12)
     #inserisco le apposite label, le entry e il bottone per proseguire
-    #labelEta=Label(fincp, text="Età",font=myFont)
+    #labelEta=Label(fincp, text="Eta",font=myFont)
     #labelEta.grid(column=0, row=0)
     entryEta=Entry(fincp)
     entryEta.grid(column=0, row=1)
@@ -741,7 +753,10 @@ def creaFinestraIniziale():
     wallp= ImageTk.PhotoImage(imagew)
     labelPWallp= Label(finprinc, image=wallp)
     labelPWallp.place(x=0, y=0)
-    finprinc.iconbitmap('img/ico.ico')
+    try:
+        finprinc.iconbitmap('img/ico.ico')
+    except:
+        pass
     bottoneLR=Button(finprinc, text="Linear Regression", command=lambda: creaFinestraCalcolaPotenziale(0),bg='#622b53') 
     bottoneLR.grid(column=0, row=1)
     imgLR = PhotoImage(file="img/lrbut.png")
@@ -771,7 +786,7 @@ x=np.array(giocatori.drop(['potential'],1))
 global scaler
 scaler = preprocessing.StandardScaler().fit(x)
 
-#carico modell9
+#carico modelli
 lr_model=pickle.load(open('FifaModelLinReg.sav','rb'))
 rn_model=pickle.load(open('FifaModelMLP.sav','rb'))
 c_model=pickle.load(open('FifaModelRanForClas.sav','rb'))
